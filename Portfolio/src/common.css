@@ -1,0 +1,331 @@
+/* CSS Variables for consistent colors */
+:root {
+  --teal: #0d9488;
+  --charcoal: #1f2937;
+  --deep-gray: #111827;
+  --off-white: #f3f4f6;
+  --coral: #f87171;
+  --gray-300: #d1d5db;
+  --gray-600: #4b5563;
+}
+
+/* Global styles */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+/* Homepage container */
+.portfolio-container {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    var(--charcoal) 0%,
+    var(--deep-gray) 100%
+  );
+  color: var(--off-white);
+  padding: 3vw 1.5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portfolio-title {
+  font-size: 2.5vw;
+  font-weight: 800;
+  color: var(--teal);
+  text-align: center;
+  margin-bottom: 3vh;
+  text-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-title:hover {
+  transform: scale(1.05);
+}
+
+.content-wrapper {
+  max-width: 85vw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+/* Card styles for About, Projects, Skills, Contact, Mail */
+.card {
+  background-color: var(--off-white);
+  border-radius: 1vw;
+  padding: 2.5vw;
+  box-shadow: 0 0.6vh 1.2vh rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--charcoal);
+}
+
+.card:hover {
+  transform: translateY(-0.5vh);
+  box-shadow: 0 0.8vh 1.6vh rgba(0, 0, 0, 0.2);
+}
+
+/* Flex row for Skills, Contact, Mail */
+.card-row {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-row .card {
+  flex: 1 1 20vw;
+}
+
+/* About styles */
+.about h2 {
+  font-size: 1.875vw;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 1vh;
+}
+
+.about hr,
+.skills hr,
+.contact hr,
+.projects hr,
+.mail hr {
+  border-top: 0.2vh solid var(--gray-300);
+  margin-bottom: 1vh;
+}
+
+.about .name-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1vh;
+}
+
+.about .name {
+  font-size: 1.25vw;
+  margin-right: 1vw;
+  color: var(--gray-600);
+}
+
+.about .magic-button {
+  background-color: var(--teal);
+  color: var(--off-white);
+  padding: 0.5vw 1vw;
+  border-radius: 0.5vw;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: left;
+}
+
+.about .magic-button:hover {
+  background-color: var(--coral);
+}
+
+.about p,
+.skills p,
+.projects p {
+  font-size: 1vw;
+  line-height: 1.5vh;
+  color: var(--gray-600);
+  margin-bottom: 1vh;
+}
+
+.about h3,
+.skills h3,
+.projects h3,
+.contact h3,
+.mail h3 {
+  font-size: 1.5vw;
+  font-weight: 600;
+  color: var(--teal);
+  margin-bottom: 1vh;
+}
+
+.about ul,
+.skills ul,
+.projects ul {
+  color: var(--gray-600);
+  list-style-type: disc;
+  padding-left: 1.5vw;
+  margin-bottom: 1vh;
+}
+
+.about ul li,
+.skills ul li,
+.projects ul li {
+  margin-bottom: 0.5vh;
+}
+
+.about .education-item,
+.about .experience-item {
+  margin-bottom: 1vh;
+}
+
+.projects .project-title {
+  font-size: 1.25vw;
+  font-weight: 600;
+  color: var(--teal);
+}
+
+/* Skills styles */
+.skills .no-skills {
+  font-size: 1vw;
+  color: var(--gray-600);
+}
+
+/* Contact styles */
+.contact p {
+  margin-bottom: 0.5vh;
+  display: flex;
+  align-items: center;
+}
+
+.contact .icon {
+  margin-right: 0.5vw;
+  font-size: 1.25vw;
+}
+
+.contact a {
+  color: var(--teal);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact a:hover {
+  color: var(--coral);
+}
+
+/* Mail styles */
+.mail form {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.mail-input,
+.mail-textarea {
+  padding: 0.5vw;
+  border: 0.1vh solid var(--gray-300);
+  border-radius: 0.5vw;
+  font-size: 1vw;
+  color: var(--gray-600);
+  background-color: var(--off-white);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mail-textarea {
+  resize: vertical;
+  min-height: 10vh;
+}
+
+.mail-button {
+  background-color: var(--teal);
+  color: var(--off-white);
+  padding: 0.5vw 1vw;
+  border-radius: 0.5vw;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1vw;
+}
+
+.mail-button:hover {
+  background-color: var(--coral);
+}
+
+/* Loading state */
+.loading {
+  color: var(--charcoal);
+  padding: 2vw;
+  font-size: 1vw;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .portfolio-container {
+    padding: 2vw 1vw;
+  }
+
+  .portfolio-title {
+    font-size: 2vw;
+  }
+
+  .card {
+    padding: 1.5vw;
+  }
+
+  .card-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-row .card {
+    flex: 1 1 80vw;
+  }
+
+  .about h2,
+  .about h3,
+  .skills h3,
+  .contact h3,
+  .projects h3,
+  .mail h3 {
+    font-size: 1.5vw;
+  }
+
+  .about p,
+  .skills p,
+  .projects p,
+  .skills .no-skills,
+  .loading,
+  .mail-input,
+  .mail-textarea,
+  .mail-button {
+    font-size: 0.8vw;
+  }
+
+  .about .name,
+  .contact .icon,
+  .projects .project-title {
+    font-size: 1vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-title {
+    font-size: 1.75vw;
+  }
+
+  .card {
+    padding: 1vw;
+  }
+
+  .about h2,
+  .about h3,
+  .skills h3,
+  .contact h3,
+  .projects h3,
+  .mail h3 {
+    font-size: 1.2vw;
+  }
+
+  .about p,
+  .skills p,
+  .projects p,
+  .skills .no-skills,
+  .loading,
+  .mail-input,
+  .mail-textarea,
+  .mail-button {
+    font-size: 0.7vw;
+  }
+
+  .about .name,
+  .contact .icon,
+  .projects .project-title {
+    font-size: 0.9vw;
+  }
+}
